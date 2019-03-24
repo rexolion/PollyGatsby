@@ -1,0 +1,13 @@
+.Goods {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    max-height: 100%;
+    width: 100%;
+    padding-bottom: 100px;
+}
+.Header_md {
+    margin: 50px 0 50px 0;
+    font-size: 30px;
+}

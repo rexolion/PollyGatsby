@@ -1,0 +1,15 @@
+.Product-item {
+    width: 400px;
+    height: 550px;
+    background-color: #444444;
+}
+.Product-image {
+    width: 100%;
+    background-color: #222222;
+    height: 75%;
+    z-index: 50;
+}
+.Product-text {
+    z-index: 100;
+    padding-left: 20px;
+}
