@@ -1,0 +1,25 @@
+.Header-container {
+  height: 120px;
+  width: 100%;
+  line-height: 120px;
+  color: #ffffff;
+  background-color: #222222;
+}
+.Header-items {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.Header_lh {
+  line-height: 125px;
+  font-size: 19px;
+}
+.Bullet-container {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+}
+.Logo {
+    font-weight: 500;
+    font-size: 30px;
+}
