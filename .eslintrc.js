@@ -4,7 +4,10 @@ module.exports = {
 		'es6': true,
 		'node': true
 	},
-	'extends': 'eslint:recommended',
+  'extends': [
+    'eslint:recommended',
+    'plugin:react/recommended'
+  ],
 	'globals': {
 		'Atomics': 'readonly',
 		'SharedArrayBuffer': 'readonly'
@@ -17,7 +20,7 @@ module.exports = {
 		'sourceType': 'module'
 	},
 	'plugins': [
-		'react'
+    'react'
 	],
 	'rules': {
 		'indent': [
@@ -35,7 +38,6 @@ module.exports = {
 		'semi': [
 			'error',
 			'always'
-		],
-		'no-unused-vars': off
+		]
 	}
 };

@@ -5,9 +5,9 @@ import Products from './Products/products';
 
 const Goods = () => (
 	<section className="Goods">
-	<Banner/>
-	<h2 class="Header_md">You like it!</h2>
-	<Products/>
+		<Banner/>
+		<h2 className="Header_md">You'll like it!</h2>
+		<Products/>
 	</section>
 );
 
