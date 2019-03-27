@@ -6,15 +6,15 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
 import Header from './Header/header';
 import Footer from './Footer/footer';
 import Container from './Container/container';
+import SEO from './seo';
 import './normalize.css';
 
-const Layout = ({ children }) => (
+const Layout = () => (
 	<StaticQuery
 		query={graphql`
       query SiteTitleQuery {
@@ -28,18 +28,12 @@ const Layout = ({ children }) => (
 		render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
-          <main>
-          	{children}
-          	<Container/>
-          </main>
+          	<SEO title="Home" keywords={['gatsby', 'application', 'react']} />
+        	<Container/>
           <Footer />
       </>
 		)}
 	/>
 );
-
-Layout.propTypes = {
-	children: PropTypes.node.isRequired,
-};
 
 export default Layout;

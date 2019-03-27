@@ -1,14 +1,9 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from '../components/layout';
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-  
-  </Layout>
-)
+	<Layout/>  
+);
 
-export default IndexPage
+export default IndexPage;

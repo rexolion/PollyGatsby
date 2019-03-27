@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import './item.css';
@@ -27,7 +26,7 @@ ItemComponent.propType = {
 
 const Item = (props) => (
 	<StaticQuery
-	  query={graphql`
+		query={graphql`
       query {
         images: allFile {
           edges {
@@ -45,7 +44,7 @@ const Item = (props) => (
       }
     
     `}
-	  render={data => 
+		render={data => 
 		{
 			const prod = props.product.node;
 			const image = data.images.edges.find(n =>

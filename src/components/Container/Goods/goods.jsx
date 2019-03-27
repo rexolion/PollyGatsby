@@ -6,7 +6,9 @@ import Products from './Products/products';
 const Goods = () => (
 	<section className="Goods">
 		<Banner/>
-		<h2 className="Header_md">You'll like it!</h2>
+		<h2 className="Header_md">
+		You&apos;ll like it!
+		</h2>
 		<Products/>
 	</section>
 );

@@ -4,7 +4,7 @@ import React from 'react';
 import './header.css';
 
 const Header = ({ siteTitle }) => (
-	<header className="Header-container">
+	<header className="Header">
 		<div className="Header-items">
 			<ul className="Bullet-container">
 				<span className="Logo">
