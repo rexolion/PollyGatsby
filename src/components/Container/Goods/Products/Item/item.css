@@ -1,27 +1,87 @@
-.Product-item {
-    width: 400px;
-    height: 550px;
-    background-color: #444444;
-    border-radius: 15px;
-    color: #fff;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-.Product-item > * {
-    border-radius: 15px;
-}
-.Product-image {
-    background-color: #222222;
-    z-index: 50;
-}
-.Product-image img {
-    border-radius: 15px 15px 0 0 ;
 
-}
-.Product-text {
+  .Product-row {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    vertical-align: middle;
+  }
+  /* font-size: calc(32px + (54 - 32) * ((100vw - 300px) / (1600 - 300))); */
+
+  .Product-type {
+    line-height: 2;
+    color: #6f6e6e;
+    padding-top: 0px;
+  }
+  .Product-price.Product-price {
+    color: #444444;
+  }
+  .Product-item {
+    background-color: #fff;
+    border-radius: 15px;
+    color: #000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .Product-item:hover {
+  }
+  .Product-item > * {
+    border-radius: 15px 15px 0 0;
+  }
+  .Product-image {
+    z-index: 50;
+  }
+  .Product-image img {
+    border-radius: 15px 15px 0 0;
+  }
+  .Product-categories.Product-categories {
+    font-size: calc(13px + (15 - 13) * ((100vw - 300px) / (1600 - 300)));
+    margin-bottom: 10px;
+    margin-top: 20px;
+    color: #000000;
+  }
+  
+  .Product-color-item {
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    margin-right: 10px;
+  }
+  .blue {
+    background-color: #018cb8;
+  }
+  .white {
+    background-color: white;
+    border: solid 0.5px #424242;
+  }
+  .red {
+    background-color: #f36354;
+  }
+  .green {
+    background-color: #52cd9e;
+  }
+  ._black._black {
+    color: #222222;
+  }
+  .Product-color-container {
+    display: flex;
+    margin-bottom: 30px;
+  }
+  .Product-size-item {
+    color: #c8c4c5;
+    margin-right: 10px;
+  }
+  .Product-text {
     z-index: 100;
-    padding-left: 20px;
-}
-.Product-item img {
+    text-align: left;
+  }
+  .Product-item img {
     width: 100%;
     height: 100%;
-}
+  }
+  .Heading_sm {
+    font-weight: 400;
+    margin: 0;
+    font-size: calc(18px + (24 - 18) * ((100vw - 300px) / (1600 - 300)));
+    color: #333333;
+  }
+  

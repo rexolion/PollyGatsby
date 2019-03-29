@@ -51,7 +51,8 @@ const Products = () => (
                                 productImg
                                 price
                                 name
-                                description
+								description
+								itemType
                             }
                         }
                     }

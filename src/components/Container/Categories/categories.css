@@ -3,3 +3,8 @@
     max-height: 100%;
     background-color: #444444;
 }
+@media only screen and (max-width: 600px) {
+    .Categories {
+        display: none;
+    }
+}

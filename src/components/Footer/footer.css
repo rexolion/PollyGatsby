@@ -36,11 +36,10 @@
 .row {
   display: flex;
 }
-.Logo {
-  font-size: 30px;
-}
 .Footer-para {
   font-size: 20px;
+  font-size: calc(18px + (20 - 18) * ((100vw - 300px) / (1600 - 300)));
+
 }
 .Footer-heading_md {
   font-size: 20px;
@@ -49,4 +48,27 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+@media only screen and (max-width: 600px) {
+  .Footer-right {
+    display: none;
+  }
+  .Footer {
+    height: 200px;
+  }
+  .Footer-text-container {
+    flex-direction: row;
+  }
+  .Footer-text-container .Logo {
+      line-height: 0;
+  }
+  .Footer-container {
+    justify-content: center;
+
+  }
+  .Footer-left {
+    width: 80%;
+  }
+  .Footer-para {
+  }
 }
