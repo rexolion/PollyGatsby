@@ -4,33 +4,48 @@ import './products.css';
 import Item from './Item/item';
 import { StaticQuery, graphql} from 'gatsby';
 import PropTypes from 'prop-types';
+import InfiniteScroll from 'react-infinite-scroller';
 
 
 class ProductsComponent extends Component {
 	constructor(props) {
 		super(props);
 		this.state = { 
-			visible: 3
+			loadedArr: [],
+			hasMore: true
+
+
 		};
-		this.loadMore = this.loadMore.bind(this);
 	}
-    
-	loadMore() {
-		this.setState(prev => {return {visible: prev.visible + 3};});
+	
+
+	loadMoreInfinite(page) {
+		let loaded = this.state.loadedArr;
+		this.props.products.splice(0,10).map(val => {
+				val ? loaded.push(val) : this.state.hasMore = false;
+			}
+		);
+		this.setState({loadedArr: loaded});
 	}
 
 	render() { 
+		const loader = <h2>Loading</h2>;
+		let items = [];
+		this.state.loadedArr.map((val,ind) => items.push(<Item key={ind} product={val}/>))
 		return (  
 			<div className="Goods">
-				<div className="Product">
-					{this.props.products.slice(0,this.state.visible).map((val, ind) =>
-							
-					{return(<Item key={ind} product={val}/>);}
-					)}
-				</div>
-				{this.state.visible < this.props.products.length && <button onClick={this.loadMore}
-					type="button">Load more</button> }
-			</div>
+				<InfiniteScroll
+                pageStart={0}
+                loadMore={this.loadMoreInfinite.bind(this)}
+                hasMore={this.state.hasMore}
+				className="Product"
+				>
+				
+					{items}
+            </InfiniteScroll>
+									</div>
+
+				
 		);
 	}
 }
