@@ -1,0 +1,5 @@
+.Logo {
+    font-weight: 500;
+    font-size: calc(25px + (30 - 25) * ((100vw - 300px) / (1600 - 300)));
+
+}

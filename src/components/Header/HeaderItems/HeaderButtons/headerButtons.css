@@ -1,0 +1,5 @@
+.Header-button-container {
+    display: flex;
+    width: 120px;
+    justify-content: space-between;
+  }

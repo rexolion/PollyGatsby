@@ -4,6 +4,7 @@ module.exports = {
 		'es6': true,
 		'node': true
 	},
+	'parser': 'babel-eslint',
   'extends': [
     'eslint:recommended',
     'plugin:react/recommended'
@@ -19,6 +20,7 @@ module.exports = {
 		'ecmaVersion': 2018,
 		'sourceType': 'module'
 	},
+	
 	'plugins': [
     'react'
 	],

@@ -9,7 +9,7 @@ import './normalize.css';
 
 class LayoutComponent extends React.Component {
   
-  constructor(props) {
+	constructor(props) {
 		super(props);
 		this.state = { 
 			cartCounter: 0,
@@ -18,20 +18,19 @@ class LayoutComponent extends React.Component {
 	}
 
   cartCounterInc = (item) => {
-		this.setState(prev => ({cartCounter: prev.cartCounter + 1,inCart: [...prev.inCart, item]}))
-		
-};
+  	this.setState(prev => ({cartCounter: prev.cartCounter + 1,inCart: [...prev.inCart, item]}));
+  };
   
-	render() { 
-		return ( 
-      <>
-        <Header cartCounter={this.state.cartCounter} siteTitle={this.props.metaData.site.siteMetadata.title} />
-          	<SEO title="Home" keywords={['gatsby', 'application', 'react']} />
-        	<Container cartCounter={this.cartCounterInc} />
-          <Footer />
-      </>
-		);
-	}
+  render() { 
+  	return ( 
+						<>
+							<Header cartCounter={this.state.cartCounter} siteTitle={this.props.metaData.site.siteMetadata.title} />
+									<SEO title="Home" keywords={['gatsby', 'application', 'react']} />
+								<Container cartCounter={this.cartCounterInc} />
+								<Footer />
+						</>
+  	);
+  }
 }
 
 LayoutComponent.propTypes = {
