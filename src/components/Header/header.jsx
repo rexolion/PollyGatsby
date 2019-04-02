@@ -2,6 +2,7 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Dropdown from './Dropdown/dropdown';
+import Cart from './Cart/cart';
 import './header.css';
 
 class Header extends React.Component {
@@ -13,14 +14,8 @@ class Header extends React.Component {
 		};
 	}
 
-	toogleMouseHover(state) {
-		return {
-			isHovering: !state.isHovering
-		};
-	}
-
 	handleMouseHover() {
-		this.setState(this.toogleMouseHover);
+		this.setState(prev => ({isHovering: !prev.isHovering}));
 	}
 
 
@@ -40,17 +35,17 @@ class Header extends React.Component {
 								{this.props.siteTitle}
 							</Link>
 						</span>
-						<div onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover}className="Bullet-item">
+						<div onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover} className="Bullet-item">
 							<li className="Header_lh ">MAN</li>
 							{this.state.isHovering && <Dropdown/>}
         
 						</div>
-						<div onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover}className="Bullet-item">
+						<div onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover} className="Bullet-item">
 							<li className="Header_lh ">WOMEN</li>
 							{this.state.isHovering && <Dropdown/>}
         
 						</div>
-						<div onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover}className="Bullet-item">
+						<div onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover} className="Bullet-item">
 							<li className="Header_lh ">OTHER</li>
 							{this.isHovering && <Dropdown/>}
         
@@ -59,6 +54,7 @@ class Header extends React.Component {
 						<li className="Header_lh ">FAQ</li>
 						<li className="Header_lh ">ACCOUNT</li>
 						<li className="Header_lh ">CRACKER</li>
+						<Cart cartCounter={this.props.cartCounter} />
 						<div className="Icon_menu"></div>
 					</ul>
 				</div>
@@ -67,9 +63,9 @@ class Header extends React.Component {
 	}
 }
 
-
 Header.propTypes = {
 	siteTitle: PropTypes.string,
+	cartCounter: PropTypes.number
 };
 
 Header.defaultProps = {

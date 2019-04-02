@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React, { Component } from 'react';
 import './products.css';
 import Item from './Item/item';
@@ -12,38 +11,66 @@ class ProductsComponent extends Component {
 		super(props);
 		this.state = { 
 			loadedArr: [],
-			hasMore: true
+			sortedArr: [],
+			hasMore: true,
+			currentSort: '',
 
 
 		};
 	}
 	
+	loadSorted() {
+		const sortType = this.props.sort;
+		const prodArr = this.props.products;
+		const sorted = [];
 
-	loadMoreInfinite(page) {
-		let loaded = this.state.loadedArr;
-		this.props.products.splice(0,10).map(val => {
-				val ? loaded.push(val) : this.state.hasMore = false;
-			}
+		switch(sortType) {
+		case 'Relevant':
+			prodArr.map(val => sorted.push(val));
+			break;
+		case 'Price_up':
+			prodArr.sort((a,b) => b.node.price - a.node.price ).map(val => sorted.push(val));
+			break;
+		case 'Price_down':
+			prodArr.sort((a,b) => a.node.price - b.node.price ).map(val => sorted.push(val));
+			break;
+		}
+
+		this.setState({sortedArr: sorted, loadedArr: [], currentSort: sortType});
+		
+	}
+	
+
+	loadMoreInfinite() {
+		this.state.sortedArr.splice(0,9).map(val => {
+			val ? this.setState(prev => ({loadedArr: [...prev.loadedArr, val]})) : this.setState({hasMore: false});
+		}
 		);
-		this.setState({loadedArr: loaded});
+		
 	}
 
 	render() { 
-		const loader = <h2>Loading</h2>;
 		let items = [];
-		this.state.loadedArr.map((val,ind) => items.push(<Item key={ind} product={val}/>))
+		
+		if(this.state.currentSort !== this.props.sort ) {
+			this.loadSorted();
+			items = [];
+		}
+
+		this.state.loadedArr.map((val,ind) => items.push(<Item key={ind} cartCounter={this.props.cartCounter} product={val}/>));
+
 		return (  
 			<div className="Goods">
 				<InfiniteScroll
-                pageStart={0}
-                loadMore={this.loadMoreInfinite.bind(this)}
-                hasMore={this.state.hasMore}
-				className="Product"
+					pageStart={0}
+					loadMore={this.loadMoreInfinite.bind(this)}
+					hasMore={this.state.hasMore}
+					className="Product"
 				>
 				
 					{items}
-            </InfiniteScroll>
-									</div>
+				</InfiniteScroll>
+			</div>
 
 				
 		);
@@ -51,11 +78,14 @@ class ProductsComponent extends Component {
 }
 
 ProductsComponent.propTypes = {
-	products: PropTypes.array
+	products: PropTypes.array,
+	sort: PropTypes.string,
+	cartCounter: PropTypes.func
 };
+
  
 
-const Products = () => (
+const Products = (props) => (
 	<StaticQuery 
 		query={
 			graphql`
@@ -75,9 +105,13 @@ const Products = () => (
             `
 		}
 		render={data => (
-			<ProductsComponent products={data.allItemsJson.edges}/>
+			<ProductsComponent cartCounter={props.cartCounter} sort={props.sort} products={data.allItemsJson.edges}/>
 		)}
 	/>
 );
 
+Products.propTypes = {
+	sort: PropTypes.string,
+	cartCounter: PropTypes.func
+};
 export default Products;

@@ -12,3 +12,41 @@
     font-size: 30px;
     font-weight: 400;
 }
+.Arrow {
+    border: solid #7D7575;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+  
+  
+  .Arrow_down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+  .Filters-container {
+    display: flex;
+    margin-bottom: 50px;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 60%;
+ 
+  }
+  .Filter_by {
+    border: 3px solid #7D7575;
+  border-radius: 15px;width: 120px;
+  height: 33px;
+    display: flex;
+  
+    align-items: center;
+    justify-content: space-around;
+    
+  }
+  .Checkbox-container_filt.Checkbox-container_filt {
+        margin: 0;
+    }
+    @media only screen and (max-width: 600px)  {
+        .Filters-container {
+            width: 100%;
+        }
+    }

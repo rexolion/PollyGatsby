@@ -1,0 +1,43 @@
+.Cart {
+  width: 93px;
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  height: 100%;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  user-select: none;
+    
+  }
+  .Cart-image {
+    height: 51px;
+    width: 60px;
+    display: flex;
+  }
+  
+  
+  .Cart-counter-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .Cart-counter {
+    width: 30px;
+    height: 30px;
+    margin: -14px;
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    line-height: 30px;
+    background: linear-gradient(90deg, #ff758c 0%,#ff7eb3 100% );
+    border-radius: 100%;
+    font-size: 15px;
+    font-weight: 500;
+    
+  }
+  

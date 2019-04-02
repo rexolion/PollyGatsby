@@ -26,7 +26,7 @@
   height: 100%;
   display: flex;
 }
-.Footer-right {
+.Footer-right.Footer-right {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -42,7 +42,7 @@
 
 }
 .Footer-heading_md {
-  font-size: 20px;
+  font-size: calc(18px + (20 - 18) * ((100vw - 300px) / (1600 - 300)));
 }
 .Footer-columns {
   display: flex;
@@ -50,7 +50,7 @@
   width: 100%;
 }
 @media only screen and (max-width: 600px) {
-  .Footer-right {
+  .Footer-right.Footer-right {
     display: none;
   }
   .Footer {

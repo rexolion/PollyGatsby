@@ -5,43 +5,53 @@ import PropTypes from 'prop-types';
 import {StaticQuery, graphql} from 'gatsby';
 import Img from 'gatsby-image';
 
-const ItemComponent = (props) => {
-	const {price, name, itemType} = props.product;
+class ItemComponent extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+		};
+	}
+	render() { 
+		const {price, name, itemType} = this.props.product;
 
-	return (<a  href="#" className="Product-item">
-		<div className="Product-image">
-			{props.children}
-		</div>
-		<div className="Product-row">
-			<div className="Product-text">
-				<h2 className="Heading_sm">{name}</h2>
-				<span className="Product-type">{itemType}</span>
-				<h2 className="Product-categories Heading_sm ">SIZES</h2>
-				<div className="Product-sizes-container">
-					<span className="Product-size-item">XS</span>
-					<span className="Product-size-item  _black">S</span>
-					<span className="Product-size-item _black">M</span>
-					<span className="Product-size-item">L</span>
-					<span className="Product-size-item _black">XL</span>
-					<span className="Product-size-item">XXL</span>
-				</div>
-				<h2 className="Product-categories Heading_sm ">COLORS</h2>
-				<div className="Product-color-container">
-					<div className="Product-color-item red"></div>
-					<div className="Product-color-item green"></div>
-					<div className="Product-color-item blue"></div>
-					<div className="Product-color-item white"></div>
-
-				</div>
+		return ( <a  className="Product-item">
+			<div className="Product-image">
+				{this.props.children}
 			</div>
-			<h2 className="Product-price Heading_sm">${price}</h2>
-		</div>
-	</a>);
-    
-};
+			<div className="Product-row">
+				<div className="Product-text">
+					<h2 className="Heading_sm">{name}</h2>
+					<span className="Product-type">{itemType}</span>
+					<h2 className="Product-categories Heading_sm ">SIZES</h2>
+					<div className="Product-sizes-container">
+						<span className="Product-size-item">XS</span>
+						<span className="Product-size-item  _black">S</span>
+						<span className="Product-size-item _black">M</span>
+						<span className="Product-size-item">L</span>
+						<span className="Product-size-item _black">XL</span>
+						<span className="Product-size-item">XXL</span>
+					</div>
+					<h2 className="Product-categories Heading_sm ">COLORS</h2>
+					<div className="Product-color-container">
+						<div className="Product-color-item red"></div>
+						<div className="Product-color-item green"></div>
+						<div className="Product-color-item blue"></div>
+						<div className="Product-color-item white"></div>
+
+					</div>
+					<button onClick={() => this.props.cartCounter(this.props.product)}>ADD TO CART</button>
+				</div>
+				<h2 className="Product-price Heading_sm">${price}</h2>
+			</div>
+		</a> );
+	}
+}
+
+
 
 ItemComponent.propType = {
-	product: PropTypes.object
+	product: PropTypes.object,
+	cartCounter: PropTypes.func
 };
 
 const Item = (props) => (
@@ -73,7 +83,7 @@ const Item = (props) => (
 			
 			const imageSizes = image.node.childImageSharp.sizes;
 			return (
-				<ItemComponent product={prod}>
+				<ItemComponent cartCounter={props.cartCounter} product={prod}>
 					<Img sizes={imageSizes} alt={prod.name}/>
 				</ItemComponent>
 			);
