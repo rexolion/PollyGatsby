@@ -1,21 +1,11 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import './account.css';
 
-class Account extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {  };
-	}
-
-	render() { 
-		return ( 
-			<div className="Account Header-button">
-				<AccountSVG/>
-			</div>
-		);
-	}
-}
+const Account = () => (
+	<div className="Account Header-button">
+		<AccountSVG/>
+	</div>
+);
 
 const AccountSVG = () => {
 	return (

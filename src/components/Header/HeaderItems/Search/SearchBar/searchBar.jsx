@@ -1,24 +1,15 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import './searchBar.css';
 
-class SearchBar extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {  };
-	}
-    
-	render() { 
-		return ( 
-			<form className="Search-container">
-				<input type="text" className="Search-bar" placeholder="Search..."></input>
-				<div className="Icon_search">
-					<SearchSVG/>
-				</div>
-			</form>
-		);
-	}
-}
+const SearchBar = (props) => (
+	<form className="Search-container">
+		<input type="text" value={props.searchValue} onChange={props.searchHandler}  className="Search-bar" placeholder="Search..."></input>
+		<div className="Icon_search">
+			<SearchSVG/>
+		</div>
+	</form>
+);
 
 const SearchSVG = () => {
 	return (
@@ -26,4 +17,11 @@ const SearchSVG = () => {
 
 	);
 };
+
+SearchBar.propTypes = {
+	searchHandler: PropTypes.func,
+	searchValue: PropTypes.string
+};
+
+
 export default SearchBar;

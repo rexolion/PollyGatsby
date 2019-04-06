@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import PropTypes from 'prop-types';
 import './cartModal.css';
 
 const modal = () => {
@@ -13,6 +12,7 @@ const modal = () => {
 		</div>
 	);
 };
+
 const CartModal = () =>  {
 	return ReactDOM.createPortal(modal, document.querySelector('#modal'));
 };

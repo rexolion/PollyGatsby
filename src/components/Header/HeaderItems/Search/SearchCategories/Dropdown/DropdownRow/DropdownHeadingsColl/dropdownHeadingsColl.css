@@ -1,0 +1,23 @@
+.Dropdown-col {
+    display: flex;
+    flex-direction: column;
+    z-index: 42;
+    margin-right: 30px;
+    padding-left: 30px;
+}
+
+.Dropdown-heading_md {
+    color: #000000;
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 0;
+    font-weight: 600;
+}
+
+.Dropdown-heading_rg.Dropdown-heading_rg {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.5;
+}

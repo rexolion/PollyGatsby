@@ -1,6 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import './searchCategories.css';
+import Dropdown from './Dropdown/dropdown';
 
 class SearchCategories extends React.Component {
 	constructor(props) {
@@ -21,7 +22,7 @@ class SearchCategories extends React.Component {
 				<span className="Search-dropdown-text">Categories</span>
 				<span className="Icon-arrow_down"></span>
 				<div className="Search-dropdown">
-
+					{this.state.isHovering && <Dropdown/>}
 				</div>
 			</div>
 		);

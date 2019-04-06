@@ -54,14 +54,15 @@ class Goods extends React.Component {
 						<span className="Checkmark"></span>
 					</div>
 				</div>
-				<Products cartCounter={this.props.cartCounter} sort={this.state.sort}/>
+				<Products searchValue={this.props.searchValue} cartCounter={this.props.cartCounter} sort={this.state.sort}/>
 			</section>
 		);
 	}
 }
  
 Goods.propTypes = {
-	cartCounter: PropTypes.func
+	cartCounter: PropTypes.func,
+	searchValue: PropTypes.string
 };
 
 export default Goods;

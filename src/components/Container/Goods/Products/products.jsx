@@ -12,32 +12,68 @@ class ProductsComponent extends Component {
 		this.state = { 
 			loadedArr: [],
 			sortedArr: [],
+			foundArr: [],
 			hasMore: true,
+			loadedSearchValue: '',
 			currentSort: '',
 
 
 		};
 	}
 	
-	loadSorted() {
-		const sortType = this.props.sort;
-		const prodArr = this.props.products;
+	
+	componentDidMount() {
+		this.loadSorted();
+	}
+
+	componentDidUpdate(prev) {
+		if(prev.searchValue !== this.props.searchValue || this.props.sort !== this.state.currentSort) {
+			this.loadSorted();
+		}
+	}
+
+	findProducts(arr, searchValue) {
+		const found = arr
+			.filter(val => val.node.name
+				.split(' ')
+				.some(val => val.substring(0,searchValue.length).toLowerCase() === searchValue.toLowerCase()));
+
+		return found;
+	}
+
+	sortByType(arr, sortType) {
 		const sorted = [];
 
 		switch(sortType) {
 		case 'Relevant':
-			prodArr.map(val => sorted.push(val));
+			arr.map(val => sorted.push(val));
 			break;
 		case 'Price_up':
-			prodArr.sort((a,b) => b.node.price - a.node.price ).map(val => sorted.push(val));
+			arr.sort((a,b) => b.node.price - a.node.price ).map(val => sorted.push(val));
 			break;
 		case 'Price_down':
-			prodArr.sort((a,b) => a.node.price - b.node.price ).map(val => sorted.push(val));
+			arr.sort((a,b) => a.node.price - b.node.price ).map(val => sorted.push(val));
 			break;
 		}
 
-		this.setState({sortedArr: sorted, loadedArr: [], currentSort: sortType});
-		
+		return sorted;
+	}
+
+	loadSorted() {
+		const sortType = this.props.sort;
+		const prodArr = this.props.products;
+		const searchValue = this.props.searchValue;
+
+		if (this.props.searchValue !== '') {
+			const found = this.findProducts(prodArr, searchValue);
+			const sorted = this.sortByType(found, sortType);
+			
+			this.setState({sortedArr: sorted, loadedArr: [], currentSort: sortType});
+		}else {
+			const sorted = this.sortByType(prodArr, sortType);
+
+			this.setState({sortedArr: sorted, loadedArr: [], currentSort: sortType});
+		}
 	}
 	
 
@@ -51,16 +87,11 @@ class ProductsComponent extends Component {
 
 	render() { 
 		let items = [];
-		
-		if(this.state.currentSort !== this.props.sort ) {
-			this.loadSorted();
-			items = [];
-		}
 
 		this.state.loadedArr.map((val,ind) => items.push(<Item key={ind} cartCounter={this.props.cartCounter} product={val}/>));
 
 		return (  
-			<div className="Goods">
+			<div className="Goods-products">
 				<InfiniteScroll
 					pageStart={0}
 					loadMore={this.loadMoreInfinite.bind(this)}
@@ -80,7 +111,8 @@ class ProductsComponent extends Component {
 ProductsComponent.propTypes = {
 	products: PropTypes.array,
 	sort: PropTypes.string,
-	cartCounter: PropTypes.func
+	cartCounter: PropTypes.func,
+	searchValue: PropTypes.string,
 };
 
  
@@ -105,13 +137,14 @@ const Products = (props) => (
             `
 		}
 		render={data => (
-			<ProductsComponent cartCounter={props.cartCounter} sort={props.sort} products={data.allItemsJson.edges}/>
+			<ProductsComponent searchValue={props.searchValue} cartCounter={props.cartCounter} sort={props.sort} products={data.allItemsJson.edges}/>
 		)}
 	/>
 );
 
 Products.propTypes = {
 	sort: PropTypes.string,
-	cartCounter: PropTypes.func
+	cartCounter: PropTypes.func,
+	searchValue: PropTypes.string,
 };
 export default Products;

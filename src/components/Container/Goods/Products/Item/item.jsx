@@ -11,6 +11,7 @@ class ItemComponent extends React.Component {
 		this.state = {
 		};
 	}
+
 	render() { 
 		const {price, name, itemType} = this.props.product;
 
@@ -39,7 +40,7 @@ class ItemComponent extends React.Component {
 						<div className="Product-color-item white"></div>
 
 					</div>
-					<button onClick={() => this.props.cartCounter(this.props.product)}>ADD TO CART</button>
+					<button onClick={() => this.cartCounter(this.props.product)}>ADD TO CART</button>
 				</div>
 				<h2 className="Product-price Heading_sm">${price}</h2>
 			</div>
