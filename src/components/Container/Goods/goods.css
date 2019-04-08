@@ -20,7 +20,9 @@
     padding: 3px;
   }
   
-  
+  .Filter-text {
+    font-size: 15px;
+  }
   .Arrow_down {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
@@ -35,7 +37,8 @@
   }
   .Filter_by {
     border: 3px solid #7D7575;
-  border-radius: 15px;width: 120px;
+  border-radius: 15px;
+  width: 99px;
   height: 33px;
     display: flex;
   
@@ -49,5 +52,23 @@
     @media only screen and (max-width: 600px)  {
         .Filters-container {
             width: 100%;
+        }
+        .Goods {
+          width: 100%;
+        }
+        .Checkbox-container_filt.Checkbox-container_filt {
+    padding-left: 34px;
+    
+        }
+        .Checkmark {
+          height: 20px;
+          width: 20px;
+        }
+        .Checkbox-container .Checkmark::after {
+          width: 2px;
+          height: 10px;
+        }
+        .Checkbox-container {
+          line-height: 26px;
         }
     }

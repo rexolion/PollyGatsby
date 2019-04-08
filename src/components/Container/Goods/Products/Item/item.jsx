@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import './item.css';
 import PropTypes from 'prop-types';
 import {StaticQuery, graphql} from 'gatsby';
 import Img from 'gatsby-image';
+import AddToCart from './AddToCart/addToCart';
+import './item.css';
 
 class ItemComponent extends React.Component {
 	constructor(props) {
@@ -40,10 +41,10 @@ class ItemComponent extends React.Component {
 						<div className="Product-color-item white"></div>
 
 					</div>
-					<button onClick={() => this.cartCounter(this.props.product)}>ADD TO CART</button>
 				</div>
 				<h2 className="Product-price Heading_sm">${price}</h2>
 			</div>
+					<AddToCart product={this.props.product} cartCounter={this.props.cartCounter}/>
 		</a> );
 	}
 }

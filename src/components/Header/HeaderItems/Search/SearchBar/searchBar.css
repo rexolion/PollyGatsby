@@ -8,7 +8,7 @@
     height: 20px;
     width: 20px;
     display:flex;
-    
+    fill: #272727;
     margin-left: 10px;
   }
   .Search-container {
@@ -44,3 +44,36 @@
   .Search-bar:focus {
     border-color: inherit; -webkit-box-shadow: none; box-shadow: none; outline: none;
   }
+
+  @media only screen and (max-width: 800px) {
+    .Search-container {
+      border-radius: 0;
+      flex-direction: row;
+      background:  inherit;
+      width: 100%;
+      justify-content: flex-end;
+    }
+    .Search-bar {
+      color: #fff;
+      display: none;
+      background: inherit;
+      border-bottom: solid #fff;
+    }
+    .Search-bar::placeholder {
+      color: #fff;
+   
+   }
+   .Icon_search {
+    width: 25px;
+    height: 30px;
+   }
+   .Icon_search svg{
+     fill: #fff;
+     width: 25px;
+     height: 30px;
+   }
+   .Icon_search:hover .Search-bar {
+     display: block;
+   }
+
+}

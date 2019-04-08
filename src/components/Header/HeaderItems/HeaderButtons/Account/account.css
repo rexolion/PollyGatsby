@@ -12,3 +12,16 @@
     width: 23px;
     height: 20px;
   }
+
+  @media only screen and (max-width: 800px) {
+    .Account.Header-button.Header-button  {
+      background: inherit;
+      box-shadow: none;
+      display: none;
+
+    }
+    .Icon-user {
+      display: none;
+    }
+    
+}

@@ -7,18 +7,26 @@
     background: #FF4645;
     align-items: center;
     justify-content: space-evenly;
+}
+
+.Search-dropdown-text {
+  line-height: 40px;
+  font-size: 16px;
+  font-weight: 500
+}
+
+.Icon-arrow_down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 4px;margin-bottom: 5px;
+
+}
+
+@media only screen and (max-width: 800px) {
+  .Search-dropdown-container {
+    display: none;
   }
-  .Search-dropdown-text {
-    line-height: 40px;
-    font-size: 16px;
-    font-weight: 500
-  }
-  .Icon-arrow_down {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    border: solid #fff;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 4px;margin-bottom: 5px;
-  
-  }
+}

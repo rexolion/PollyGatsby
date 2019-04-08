@@ -1,5 +1,11 @@
 .Header-button-container {
-    display: flex;
-    width: 120px;
-    justify-content: space-between;
+  display: flex;
+  width: 120px;
+  justify-content: space-between;
+}
+
+ @media only screen and (max-width: 800px) {
+  .Header-button-container {
+    width: initial;
   }
+}

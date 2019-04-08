@@ -10,7 +10,7 @@ const Humburger = () => (
 const HumburgerSVG = () => {
 	return (
 		<svg className="Icon_menu" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-			viewBox="0 0 512 512" styles="enable-background:new 0 0 512 512; fill: #ffffff;" xmlSpace="preserve" >
+			viewBox="0 0 512 512" fill="#ffffff" styles="enable-background:new 0 0 512 512; fill: #ffffff;" xmlSpace="preserve" >
 			<g>
 				<g>
 					<path d="M491.318,235.318H20.682C9.26,235.318,0,244.577,0,256s9.26,20.682,20.682,20.682h470.636

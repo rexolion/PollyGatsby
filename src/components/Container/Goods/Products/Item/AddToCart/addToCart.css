@@ -1,0 +1,17 @@
+.AddToCart {
+    height: 40px;
+    text-decoration: none;
+    background: #FF4645;
+    margin-bottom: 20px;
+    border: 0;
+    width: 200px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+}
+.AddToCart-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
