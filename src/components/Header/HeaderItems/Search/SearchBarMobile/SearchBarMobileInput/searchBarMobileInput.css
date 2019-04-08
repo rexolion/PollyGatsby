@@ -1,0 +1,23 @@
+.Search-bar_mobile {
+    color: #fff;
+    background: inherit;
+    border:0;
+    border-bottom: solid #fff;
+    width: 95%;
+    position:relative;
+    height: 33px;
+    text-decoration: none;
+  }
+  .Search-bar_mobile::placeholder {
+    color: #fff;
+ 
+ }
+ .Search-container input[type="text"] {
+    font-family: Montserrat;
+      font-size:18px;
+
+
+}
+.Search-bar_mobile:focus {
+  border-color: inherit; -webkit-box-shadow: none; box-shadow: none; outline: none;
+}

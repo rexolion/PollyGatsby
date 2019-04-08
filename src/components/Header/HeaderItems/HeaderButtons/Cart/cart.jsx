@@ -17,7 +17,6 @@ class Cart extends React.Component {
 
 	render() { 
 		return ( 
-            
 			<div className="Cart Header-button">
 				<CartSVG/>
 				<div className="Cart-counter-container">
@@ -33,7 +32,7 @@ class Cart extends React.Component {
 }
 
 Cart.propTypes = {
-	cartCounter: PropTypes.number
+	cartCounter: PropTypes.number,
 };
 
 const CartSVG = () => {

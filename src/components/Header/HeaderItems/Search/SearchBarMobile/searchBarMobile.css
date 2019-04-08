@@ -53,7 +53,15 @@
       width: 100%;
       justify-content: flex-end;
     }
-    
+    .Search-bar {
+      color: #fff;
+      background: inherit;
+      border-bottom: solid #fff;
+    }
+    .Search-bar::placeholder {
+      color: #fff;
+   
+   }
    .Icon_search {
     width: 25px;
     height: 30px;
@@ -63,6 +71,8 @@
      width: 25px;
      height: 30px;
    }
-   
+   .Icon_search:hover .Search-bar {
+     display: block;
+   }
 
 }

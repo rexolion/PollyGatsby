@@ -37,11 +37,10 @@
   }
   .Filter_by {
     border: 3px solid #7D7575;
-  border-radius: 15px;
-  width: 99px;
-  height: 33px;
+    border-radius: 15px;
+    width: 107px;
+    height: 35px;
     display: flex;
-  
     align-items: center;
     justify-content: space-around;
     

@@ -44,7 +44,7 @@ class ItemComponent extends React.Component {
 				</div>
 				<h2 className="Product-price Heading_sm">${price}</h2>
 			</div>
-					<AddToCart product={this.props.product} cartCounter={this.props.cartCounter}/>
+			<AddToCart product={this.props.product} cartCounter={this.props.cartCounter}/>
 		</a> );
 	}
 }

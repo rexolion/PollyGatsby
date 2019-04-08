@@ -12,7 +12,7 @@ const HeaderButtons = (props) => (
 );
  
 HeaderButtons.propTypes = {
-	cartCounter: PropTypes.number
+	cartCounter: PropTypes.number,
 };
 
 export default HeaderButtons;

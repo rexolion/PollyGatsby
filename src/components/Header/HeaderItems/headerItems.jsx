@@ -6,16 +6,38 @@ import HeaderButtons from './HeaderButtons/headerButtons';
 import Humburger from './Humburger/humburger';
 import './headerItems.css';
 
-const HeaderItems = (props) => (
-	<div className="Header-items">
-		<ul className="Bullet-container">
-			<Logo siteTitle={props.siteTitle} />
-			<Search searchHandler={props.searchHandler} searchValue={props.searchValue}/>
-			<HeaderButtons cartCounter={props.cartCounter}/>
-			<Humburger/>
-		</ul>
-	</div>
-);
+
+class HeaderItems extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = { 
+			searchIconPressed: false,
+		};
+	}
+
+	handleSearchIconPressed = () => {
+		this.setState(prev => ({searchIconPressed: !prev.searchIconPressed}));
+	}
+
+	showButtons = () => (
+		<>
+		<HeaderButtons searchIconPressed={this.state.searchIconPressed}  cartCounter={this.props.cartCounter}/> 
+		<Humburger/>
+		</>
+	);
+
+	render() { 
+		return ( 
+			<div className="Header-items">
+				<ul className="Bullet-container">
+					<Logo siteTitle={this.props.siteTitle} />
+					<Search handleSearchIconPressed={this.handleSearchIconPressed} searchHandler={this.props.searchHandler} searchValue={this.props.searchValue}/>
+					{!this.state.searchIconPressed && this.showButtons()}
+				</ul>
+			</div>
+		);
+	}
+}
 
 HeaderItems.propTypes = {
 	cartCounter: PropTypes.number,
