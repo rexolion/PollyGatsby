@@ -16,14 +16,7 @@ class FiltersContainer extends React.Component {
 		return ( 
 			<div className="Filters-container">
 				<FilterByContainer sort={sort} toogleSort={toogleSort}/>
-				<div className="Checkbox-container Checkbox-container_filt">Adidas
-					<input type="checkbox" checked="checked"></input>
-					<span className="Checkmark"></span>
-				</div>
-				<div className="Checkbox-container Checkbox-container_filt">Adidas
-					<input type="checkbox" checked="checked"></input>
-					<span className="Checkmark"></span>
-				</div>
+				
 			</div> );
 	}
 }

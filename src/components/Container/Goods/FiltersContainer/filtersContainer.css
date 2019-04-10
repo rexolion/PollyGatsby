@@ -1,9 +1,8 @@
 .Filters-container {
     display: flex;
     margin-bottom: 50px;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 60%;
+    align-items: flex-start;
+    width: 80%;
 
 }
 
@@ -12,10 +11,6 @@
 }
 
 @media only screen and (max-width: 600px) {
-    .Filters-container {
-        width: 100%;
-    }
-
     .Checkbox-container_filt.Checkbox-container_filt {
         padding-left: 34px;
 
