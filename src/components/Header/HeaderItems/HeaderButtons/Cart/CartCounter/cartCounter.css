@@ -1,0 +1,33 @@
+.Cart-counter-container {
+    display: flex;
+
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.Cart-counter {
+    width: 35px;
+    height: 35px;
+    margin: -10px;
+    position: absolute;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    line-height: 35px;
+    background: #FF4645;
+    border-radius: 100%;
+    font-size: 14px;
+    font-weight: 500;
+
+}
+
+@media only screen and (max-width: 800px) {
+    .Cart-counter {
+      width: 27px;
+      height: 27px;
+      background: #fff;
+      color: #000;
+    }
+  }

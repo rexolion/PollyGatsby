@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './cart.css';
 import CartModal from './CartModal/cartModal';
+import CartCounter from './CartCounter/cartCounter';
+import './cart.css';
 
 class Cart extends React.Component {
 	constructor(props) {
@@ -21,9 +22,7 @@ class Cart extends React.Component {
 		return ( 
 			<div className="Cart Header-button" onClick={this.toogleModal}>
 				<CartSVG/>
-				<div className="Cart-counter-container">
-					<div className="Cart-counter">{cartCounter}</div>
-				</div>
+				<CartCounter cartCounter={cartCounter}/>
 				<CartModal inCart={inCart} open={this.state.cartClicked} onClose={this.toogleModal}/>
 			</div>
 	

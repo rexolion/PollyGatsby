@@ -3,28 +3,6 @@
   width:26px;
   height: 24px;
 }
-
-.Cart-counter-container {
-    display: flex;
-
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-  .Cart-counter {
-    width: 35px;
-    height: 35px;
-    margin: -10px;
-    position: absolute;
-    text-align: center;
-    color: #fff;
-    line-height: 35px;
-    background: #FF4645;
-    border-radius: 100%;
-    font-size: 14px;
-    font-weight: 500;
-    
-  }
-  
   .Icon-cart {
     width: 27px;
    height: 30px;
