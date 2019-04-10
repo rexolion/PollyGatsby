@@ -1,20 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
+import CartModalContainer from './CartModalContainer/cartModalContainer';
 import './cartModal.css';
+// onClick={onClose}
 
-const modal = () => {
-	return (
-		<div className="CartModal-container">
-			<div className="CartModal">
-				CartModal
-				<div className="block"></div>
-			</div>
-		</div>
-	);
+const CartModal = ({open,onClose, inCart}) => 
+	open 
+		? ReactDOM.createPortal(
+			<CartModalContainer inCart={inCart}/>,
+			document.body)
+		: null;
+
+
+CartModal.propTypes = {
+	open: PropTypes.bool,
+	onClose: PropTypes.func,
+	inCart: PropTypes.array
 };
 
-const CartModal = () =>  {
-	return ReactDOM.createPortal(modal, document.querySelector('#modal'));
-};
- 
 export default CartModal;

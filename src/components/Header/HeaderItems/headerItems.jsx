@@ -21,7 +21,7 @@ class HeaderItems extends React.Component {
 
 	showButtons = () => (
 		<>
-		<HeaderButtons searchIconPressed={this.state.searchIconPressed}  cartCounter={this.props.cartCounter}/> 
+		<HeaderButtons inCart={this.props.inCart} cartModalOpened={this.props.cartModalOpened} searchIconPressed={this.state.searchIconPressed}  cartCounter={this.props.cartCounter}/> 
 		<Humburger/>
 		</>
 	);
@@ -43,7 +43,9 @@ HeaderItems.propTypes = {
 	cartCounter: PropTypes.number,
 	siteTitle: PropTypes.string,
 	searchHandler: PropTypes.func,
-	searchValue: PropTypes.string
+	searchValue: PropTypes.string,
+	cartModalOpened: PropTypes.func,
+	inCart: PropTypes.array
 };
  
 export default HeaderItems;

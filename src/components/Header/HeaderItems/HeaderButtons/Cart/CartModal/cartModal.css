@@ -1,11 +1,10 @@
 .CartModal {
-    width: 600px;
-    height: 600px;
+    width: 70vw;
+    height: 80vh;
     background-color: #fff;
-    
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
 .CartModal-container {
-    opacity: 0;
     position: fixed;
     top: 0;
     right: 0;
@@ -16,11 +15,215 @@
     justify-content: center;
     transition: opacity .25s ease;
 }
-.block {
-    height: 100px;
-    width: 100px;
-    background-color: #000;
+
+.CartModal-row {
+    display: flex;
 }
+
+.CartModal-heading_lg {
+    font-size: 45px;
+    margin:0;
+    font-weight: 500;
+}
+
+.CartModal-payment-image  {
+    width: 80%;
+    height: 300px;
+    margin: 80px 0 140px 0 ;
+    background-color: #222;
+}
+.CartModal-payment-text {
+    display: flex;
+    align-self: flex-start;
+    margin-bottom: 25px;
+    align-items: center;
+    width: 130px;
+    justify-content: space-between;
+}
+
+.CartModal-cart-container {
+    margin-top: 37px;
+}
+.CartModal-item {
+    width: 40vw;
+    margin-right: 30px;
+    height: 100px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.09);
+    border-radius: 5px;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.CartModal-sm {
+    font-weight: normal;
+    font-size: 13px;
+    color: #777676;
+}
+
+.CartModal-item-image {
+    border-radius: 100%;
+    width: 75px;
+    margin-left: 15px;
+    height: 75px;
+    background-color: #eee;
+}
+
+.CartModal-counter {
+    height: 20px;
+    width: 82px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.CartModal-counter-res {
+    width: 42px;
+    height: 20px;
+    background-color: #eee;
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    
+}
+.CartModal-counter-butt {
+    font-size: 25px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.CartModal-item-text {
+    width: 198px;
+    height: 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+.CartModal-buttons {
+    display: flex;
+    width: 290px;
+    height: 37px;
+    justify-content: space-between;
+    align-self: flex-start;
+}
+.Polly-button {
+    width: 135px;
+    height: 37px;
+    font-weight: 500;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 0;
+
+}
+
+.CartModal-heading_sm {
+    font-weight: normal;
+    font-size: 18px;
+    margin: 0;
+}
+.CartModal-heading_md {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.Polly-button_pri {
+    background: #FF4645;
+    color: #fff;
+}
+
+.Polly-button_sec {
+    color: #FF4645;
+    background-color: #fff;
+    border: 2px solid #FF4645;
+    box-sizing: border-box;
+}
+
+.Polly-button:hover {
+    opacity: .8;
+}
+
+.Polly-button_sec:hover {
+    opacity: .8;
+    background-color: #FF4645;
+    color: #fff;
+}
+
+.CartModal-part {
+    width: 50%;
+    height: 80vh;
+    display: flex;
+    overflow-y: scroll;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 58px 50px 0 50px;
+}
+
+.CartModal-item-close {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    width: 32px;
+    margin-right: 15px;
+}
+.Icon_close {
+    margin-top: 10px;
+    right: 25px;
+    top: 25px;
+    width: 25px;
+    height: 25px;
+    opacity: 0.3;
+  }
+  .Icon_close:hover {
+    opacity: 1;
+  }
+  .Icon_close:before, .Icon_close:after {
+    left: 15px;
+    position: absolute;
+    content: ' ';
+    height: 20px;
+    width: 2px;
+    background-color: #333;
+  }
+  .Icon_close:before {
+    transform: rotate(45deg);
+  }
+  .Icon_close:after {
+    transform: rotate(-45deg);
+  }
+
+  .CartModal-close {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+}
+.CartModal-close:hover {
+    opacity: 0.3;
+  }
+  .CartModal-close:before, .CartModal-close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #fff;
+  }
+  .CartModal-close:before {
+    transform: rotate(45deg);
+  }
+  .CartModal-close:after {
+    transform: rotate(-45deg);
+  }
+  
 
 @media only screen and (max-width: 800px) {
     .CartModal-container {

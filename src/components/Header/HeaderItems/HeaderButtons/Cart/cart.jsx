@@ -7,22 +7,24 @@ class Cart extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = { 
-			isCliked: false
+			cartClicked: false
 		};
 	}
     
-	toogleModal() {
-		this.setState(prev => ({isCliked: !prev.isCliked}));
+	toogleModal = () => {
+		this.props.cartModalOpened();
+		this.setState(prev => ({cartClicked: !prev.cartClicked}));
 	}
 
 	render() { 
+		const {cartCounter, inCart} = this.props;
 		return ( 
-			<div className="Cart Header-button">
+			<div className="Cart Header-button" onClick={this.toogleModal}>
 				<CartSVG/>
 				<div className="Cart-counter-container">
-					<div className="Cart-counter">{this.props.cartCounter}</div>
+					<div className="Cart-counter">{cartCounter}</div>
 				</div>
-				{this.state.isCliked && <CartModal/>}
+				<CartModal inCart={inCart} open={this.state.cartClicked} onClose={this.toogleModal}/>
 			</div>
 	
 
@@ -33,6 +35,8 @@ class Cart extends React.Component {
 
 Cart.propTypes = {
 	cartCounter: PropTypes.number,
+	cartModalOpened: PropTypes.func,
+	inCart: PropTypes.array
 };
 
 const CartSVG = () => {
