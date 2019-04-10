@@ -6,13 +6,18 @@ import SearchBarMobile from './SearchBarMobile/searchBarMobile';
 import './search.css';
 
 function isMobile() {
-	let mq = window.matchMedia('(max-width: 700px)');
-
-	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && mq.matches) {
-		return true;
+	if (typeof window !== 'undefined') {
+		let mq = window.matchMedia('(max-width: 700px)');
+	
+		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && mq.matches) {
+			return true;
+		}
+		return false;
 	}
-	return false;
+
 }
+
+
 
 const Search = (props) => (
 	<div className="Search">
