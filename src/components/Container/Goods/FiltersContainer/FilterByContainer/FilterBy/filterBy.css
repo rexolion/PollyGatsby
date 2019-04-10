@@ -1,0 +1,55 @@
+.Filter-text {
+    font-size: 15px;
+}
+
+.Arrow_down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+.Arrow_right.Arrow_right  {
+    transform: rotate(-45deg);
+    border-color: #fff;
+    -webkit-transform: rotate(-45deg);
+}
+
+.Filter_by {
+    border: 3px solid #7D7575;
+    border-radius: 15px;
+    width: 107px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.Filter_by:hover {
+    color: #fff;
+    background-color: #7D7575;
+}
+
+.Filter_by_pressed {
+    background-color: #7D7575;
+    border: 3px solid #7D7575;
+    color: #fff;
+    border-radius: 15px;
+    width: 107px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+
+.Arrow {
+    border: solid #7D7575;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+
+.Filter_by:hover .Arrow.Arrow_down {
+    border-color: #fff;
+}
