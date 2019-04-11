@@ -36,11 +36,14 @@ class BrandFiltersComponent extends React.Component {
 	render() { 
 
 		return ( 
+			<>
+			<h2 className="Heading-side_lg" >Brands</h2>
 			<div className="Categories-checkboxes">
 				{this.state.loadedArr.map((val,ind) => {return <BrandCheckbox brand={val} key={ind} 
 					changeHandler={this.handleBrandsChange} isChecked={this.state.brandMap[val]}/>;})}
 				<h5 onClick={() => this.loadMore()} className="Heading_more">+ MORE BRANDS</h5>
 			</div>
+			</>
 		);
 	}
 }

@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CartModalRow from './CartModalRow/cartModalRow';
-import CartModalClose from './CartModalClose/cartModalClose';
-import './cartModalContainer.css';
+import './cartModalContainerMobile.css';
 
 class CartModalContainer extends React.Component {
 	constructor(props) {
@@ -13,10 +11,9 @@ class CartModalContainer extends React.Component {
 		const {inCart} = this.props;
         
 		return ( 
-			<div className="CartModal-container">
-				<div className="CartModal">
-					<CartModalRow inCart={inCart}/>
-					<CartModalClose/>
+			<div className="CartModal-container_mobile">
+				<div className="CartModal_mobile">
+					<h2 className="CartModal-heading_lg">My cart</h2>
 				</div>
 			</div>
 		);

@@ -1,7 +1,7 @@
 .Filters-container {
     display: flex;
-    margin-bottom: 50px;
-    align-items: flex-start;
+    margin: 37px 0 23px 0;
+        align-items: flex-start;
     width: 80%;
 
 }

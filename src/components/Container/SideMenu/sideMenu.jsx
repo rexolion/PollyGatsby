@@ -13,9 +13,7 @@ class SideMenu extends React.Component {
 	render() { 
 		return (   <div className="Categories">
 			<div className="Categories-row">
-				<h2 className="Heading-side_lg">Gender</h2>
 				<Categories/>
-				<h2 className="Heading-side_lg" >Brands</h2>
 				<BrandFilters/>
 				<h2 className="Heading-side_lg">Size</h2>
 				<div className="Size-row">

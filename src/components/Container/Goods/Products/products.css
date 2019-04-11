@@ -24,3 +24,9 @@
     width: 100%;
     padding-bottom: 100px;
 }
+
+@media only screen and (max-width: 600px) {
+    .Product {
+        width: auto;
+    }
+}

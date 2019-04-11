@@ -19,7 +19,7 @@ module.exports = {
 			options: {
 				name: 'Polly website',
 				short_name: 'Polly',
-				start_url: '/',
+				start_url: '/PollyGatsby',
 				background_color: '#fff',
 				theme_color: '#FF4645',
 				display: 'standalone',
