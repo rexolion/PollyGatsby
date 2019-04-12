@@ -1,0 +1,38 @@
+.Polly-button_pri {
+    background: #FF4645;
+    color: #fff;
+}
+
+.Polly-button_sec {
+    color: #FF4645;
+    background-color: #fff;
+    border: 2px solid #FF4645;
+    box-sizing: border-box;
+}
+
+.Polly-button:hover {
+    opacity: .8;
+}
+
+.Polly-button_sec:hover {
+    opacity: .8;
+    background-color: #FF4645;
+    color: #fff;
+}
+.CartModal-buttons_mobile {
+    display: flex;
+    width: 290px;
+    margin-left: 15px;
+    height: 37px;
+    justify-content: space-between;
+    align-self: flex-start;
+}
+.Polly-button {
+    width: 135px;
+    height: 37px;
+    font-weight: 500;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 0;
+
+}

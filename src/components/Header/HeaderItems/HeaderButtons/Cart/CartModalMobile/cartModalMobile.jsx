@@ -7,7 +7,7 @@ import './cartModalMobile.css';
 const CartModalMobile = ({open,onClose, inCart}) => 
 	open 
 		? ReactDOM.createPortal(
-			<CartModalContainerMobile inCart={inCart}/>,
+			<CartModalContainerMobile onClose={onClose} inCart={inCart}/>,
 			document.body)
 		: null;
 

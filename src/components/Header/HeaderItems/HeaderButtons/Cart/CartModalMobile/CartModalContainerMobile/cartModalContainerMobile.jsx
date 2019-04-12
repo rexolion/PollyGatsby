@@ -1,5 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import CartModalButtonsMobile from './CartModalButtonsMobile/cartModalButtonsMobile';
+import CartModalHeadingMobile from './CartModalHeadingMobile/cartModalHeadingMobile';
+import CartModalItemContainerMobile from './CartModalItemContainerMobile/cartModalItemContainerMobile';
+import CartModalSubtotalMobile from './CartModalSubtotalMobile/cartModalSubtotalMobile';
 import './cartModalContainerMobile.css';
 
 class CartModalContainer extends React.Component {
@@ -8,12 +12,16 @@ class CartModalContainer extends React.Component {
 		this.state = {  };
 	}
 	render() { 
-		const {inCart} = this.props;
-        
+		const {onClose, inCart} = this.props;
+
 		return ( 
 			<div className="CartModal-container_mobile">
 				<div className="CartModal_mobile">
-					<h2 className="CartModal-heading_lg">My cart</h2>
+					<CartModalHeadingMobile/>
+					<CartModalItemContainerMobile onClose={onClose} inCart={inCart}/>
+					<CartModalSubtotalMobile/>
+					<CartModalButtonsMobile/>
+
 				</div>
 			</div>
 		);
@@ -21,7 +29,8 @@ class CartModalContainer extends React.Component {
 }
 
 CartModalContainer.propTypes = {
-	inCart: PropTypes.array
+	inCart: PropTypes.array,
+	onClose: PropTypes.func
 };
  
 export default CartModalContainer;

@@ -1,0 +1,18 @@
+.CartModal-payment-text {
+    display: flex;
+    align-self: flex-start;
+    margin-bottom: 15px;
+    align-items: center;
+    width: 130px;
+    margin-left: 15px;
+    justify-content: space-between;
+}
+.CartModal-heading_sm_mobile {
+    font-weight: normal;
+    font-size: 16px;
+    margin: 0;
+}
+.CartModal-heading_md_mobile {
+    font-weight: 500;
+    font-size: 14px;
+}

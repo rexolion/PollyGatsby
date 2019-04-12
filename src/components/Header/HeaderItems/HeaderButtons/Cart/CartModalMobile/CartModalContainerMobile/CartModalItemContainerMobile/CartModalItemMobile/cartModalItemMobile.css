@@ -1,0 +1,117 @@
+.CartModal-item_mobile {
+    width: 344px;
+    height: 100px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.09);
+    border-radius: 5px;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    display: -webkit-flex;
+    justify-content: space-between;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+
+.CartModal-item_mobile > * {
+    margin: 0 6px 0 6px;
+}
+.CartModal-sm_mobile {
+    font-weight: normal;
+    font-size: 10px;
+    color: #777676;
+}
+
+.CartModal-item-image {
+    border-radius: 100%;
+    width: 75px;
+    margin-left: 15px;
+    height: 75px;
+    background-color: #eee;
+}
+
+
+.CartModal-counter {
+    height: 20px;
+    width: 94px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.CartModal-counter-res_mobile {
+    width: 42px;
+    height: 20px;
+    background-color: #eee;
+    display: -webkit-flex;
+    display: flex;
+    font-size: 9px;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    border-radius: 5px;
+    
+}
+.CartModal-counter-butt {
+    font-size: 25px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.CartModal-item-text_mobile {
+    width: 105px;
+    height: 38px;
+    margin-left: 15px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
+.CartModal-heading_sm_mobile {
+    font-weight: normal;
+    font-size: 16px;
+    margin: 0;
+}
+.CartModal-heading_md_mobile {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+
+.CartModal-item-close {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    width: 32px;
+}
+
+.Icon_close {
+    margin-top: 10px;
+    right: 25px;
+    top: 25px;
+    width: 25px;
+    height: 25px;
+    opacity: 0.3;
+  }
+  .Icon_close:hover {
+    opacity: 1;
+  }
+  .Icon_close:before, .Icon_close:after {
+    left: 15px;
+    position: absolute;
+    content: ' ';
+    height: 20px;
+    width: 2px;
+    background-color: #333;
+  }
+  .Icon_close:before {
+    transform: rotate(45deg);
+  }
+  .Icon_close:after {
+    transform: rotate(-45deg);
+  }
