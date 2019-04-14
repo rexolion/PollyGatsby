@@ -14,7 +14,7 @@ class LayoutComponent extends React.Component {
 		this.state = { 
 			cartCounter: 0,
 			searchValue: '',
-			cartModalOpened: false,
+			modalOpened: false,
 			inCart: [],
 		};
 	}
@@ -28,14 +28,14 @@ class LayoutComponent extends React.Component {
   	this.setState(prev => ({cartCounter: prev.cartCounter + 1,inCart: [...prev.inCart, item]}));
   };
 	
-	cartModalOpened = () => {
-		this.setState(prev => ({cartModalOpened: !prev.cartModalOpened}));
+	modalOpened = () => {
+		this.setState(prev => ({modalOpened: !prev.modalOpened}));
 	}
   
 	render() { 
   	return ( 
-  		<div className={this.state.cartModalOpened ? 'Modal-blur' : undefined}>
-  			<Header inCart={this.state.inCart} cartModalOpened={this.cartModalOpened} cartCounter={this.state.cartCounter} siteTitle={this.props.metaData.site.siteMetadata.title} searchHandler={this.searchHandler} searchValue={this.state.searchValue} />
+  		<div className={this.state.modalOpened ? 'Modal-blur' : undefined}>
+  			<Header inCart={this.state.inCart} modalOpened={this.modalOpened} cartCounter={this.state.cartCounter} siteTitle={this.props.metaData.site.siteMetadata.title} searchHandler={this.searchHandler} searchValue={this.state.searchValue} />
   			<SEO title="Home" keywords={['gatsby', 'application', 'react']} />
   			<Container searchValue={this.state.searchValue} cartCounter={this.cartCounterInc} />
   			<Footer />

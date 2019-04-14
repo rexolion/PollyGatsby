@@ -1,11 +1,32 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import HumburgerModal from './HumburgerModal/humburgerModal';
 import './humburger.css';
 
-const Humburger = () => (
-	<div className="Icon_menu">
-		<HumburgerSVG/>
-	</div>
-);
+
+class Humburger extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = { 
+			isOpened: false
+		};
+	}
+
+	handleHumClick = () => {
+		this.props.modalOpened();
+		this.setState(prev => ({isOpened: !prev.isOpened}));
+	}
+
+	render() { 
+		return ( 
+			<div className="Icon_menu" onClick={this.handleHumClick}>
+				<HumburgerSVG/>
+				{this.state.isOpened && <HumburgerModal open={this.state.isOpened}/>}
+			</div>
+		);
+	}
+}
+ 
 
 const HumburgerSVG = () => {
 	return (
@@ -35,7 +56,7 @@ const HumburgerSVG = () => {
 };
 
 Humburger.propTypes = {
-
+	modalOpened: PropTypes.func
 };
  
 export default Humburger;

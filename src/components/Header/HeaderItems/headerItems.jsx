@@ -21,8 +21,8 @@ class HeaderItems extends React.Component {
 
 	showButtons = () => (
 		<>
-		<HeaderButtons inCart={this.props.inCart} cartModalOpened={this.props.cartModalOpened} searchIconPressed={this.state.searchIconPressed}  cartCounter={this.props.cartCounter}/> 
-		<Humburger/>
+		<HeaderButtons inCart={this.props.inCart} modalOpened={this.props.modalOpened} searchIconPressed={this.state.searchIconPressed}  cartCounter={this.props.cartCounter}/> 
+		<Humburger modalOpened={this.props.modalOpened}/>
 		</>
 	);
 
@@ -44,7 +44,7 @@ HeaderItems.propTypes = {
 	siteTitle: PropTypes.string,
 	searchHandler: PropTypes.func,
 	searchValue: PropTypes.string,
-	cartModalOpened: PropTypes.func,
+	modalOpened: PropTypes.func,
 	inCart: PropTypes.array
 };
  

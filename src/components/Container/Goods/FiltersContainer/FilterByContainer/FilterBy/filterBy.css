@@ -1,5 +1,5 @@
 .Filter-text {
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .Arrow_down {
@@ -13,14 +13,13 @@
 }
 
 .Filter_by {
-    border: 3px solid #7D7575;
+    border: 2px solid #7D7575;
     border-radius: 15px;
-    width: 129px;
-    height: 39px;
+    width: 120px;
+    height: 35px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-
 }
 
 .Filter_by:hover {
@@ -30,11 +29,11 @@
 
 .Filter_by_pressed {
     background-color: #7D7575;
-    border: 3px solid #7D7575;
+    border: 2px solid #7D7575;
     color: #fff;
     border-radius: 15px;
-    width: 129px;
-    height: 39px;
+    width: 120px;
+    height: 35px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -53,4 +52,15 @@
 
 .Filter_by:hover .Arrow.Arrow_down {
     border-color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+    .Filter_by {
+        width: 105px;
+        height: 31px;
+    }
+    .Filter_by_pressed {
+        width: 105px;
+        height: 31px;
+    }
 }

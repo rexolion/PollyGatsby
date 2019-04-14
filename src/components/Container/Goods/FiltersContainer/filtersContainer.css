@@ -9,6 +9,11 @@
 .Checkbox-container_filt.Checkbox-container_filt {
     margin: 0;
 }
+@media only screen and (min-width: 600px) {
+    .Filters-container{
+        width: 90%;
+    }
+}
 
 @media only screen and (max-width: 600px) {
     .Checkbox-container_filt.Checkbox-container_filt {
@@ -19,6 +24,10 @@
     .Checkmark {
         height: 20px;
         width: 20px;
+    }
+    
+    .Filters-container {
+        width: 90%;
     }
 
     .Checkbox-container .Checkmark::after {

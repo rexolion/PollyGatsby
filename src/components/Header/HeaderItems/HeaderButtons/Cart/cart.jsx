@@ -14,7 +14,7 @@ class Cart extends React.Component {
 	}
     
 	toogleModal = () => {
-		this.props.cartModalOpened();
+		this.props.modalOpened();
 		this.setState(prev => ({cartClicked: !prev.cartClicked}));
 	}
 
@@ -53,7 +53,7 @@ const CartSVG = () => {
  
 Cart.propTypes = {
 	cartCounter: PropTypes.number,
-	cartModalOpened: PropTypes.func,
+	modalOpened: PropTypes.func,
 	inCart: PropTypes.array
 };
 

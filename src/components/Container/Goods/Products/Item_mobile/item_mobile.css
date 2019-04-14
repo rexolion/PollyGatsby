@@ -1,100 +1,89 @@
 
-  .Product-row {
+  .Product-row_mobile {
     display: flex;
     text-align: center;
-    justify-content: space-evenly;
-    margin: 30px 5px 30px 15px;
     vertical-align: middle;
+    margin: 30px 5px 30px 15px;
   }
 
-  .Product-type {
-    line-height: 2;
+  .Product-type_mobile {
+    line-height: 34px;
+    font-size: 14px;
     color: #6f6e6e;
     padding-top: 0px;
   }
-  .Product-price.Product-price {
-    color: #444444;
+  .Product-price_mobile.Product-price_mobile {
+    color: #6f6e6e;
   }
-  .Product-item {
+  .Product-item_mobile {
     background-color: #fff;
     border-radius: 15px;
     color: #000;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
-  .Product-item:hover {
+  .Product-item_mobile:hover {
   }
  
-  .Product-item > * {
+  .Product-item_mobile > * {
     border-radius: 15px 15px 0 0;
   }
-  .Product-image {
+  .Product-image_mobile {
     z-index: 50;
   }
-  .Product-image img {
+  .Product-image_mobile img {
     border-radius: 15px 15px 0 0;
   }
-  .Product-categories.Product-categories {
+  .Product-categories.Product-categories_mobile {
     font-size: calc(13px + (15 - 13) * ((100vw - 300px) / (1600 - 300)));
     margin-bottom: 10px;
     margin-top: 20px;
     color: #000000;
   }
   
-  .Product-color-item {
+  .Product-color-item_mobile {
     height: 20px;
     width: 20px;
     border-radius: 100%;
     margin-right: 10px;
   }
-  .blue {
+  .blue{
     background-color: #018cb8;
   }
-  .white {
+  .white{
     background-color: white;
     border: solid 0.5px #424242;
   }
-  .red {
+  .red{
     background-color: #f36354;
   }
-  .green {
+  .green{
     background-color: #52cd9e;
   }
-  ._black._black {
+  ._black._black{
     color: #222222;
   }
-  .Product-color-container {
+  .Product-color-container_mobile {
     display: flex;
     margin-bottom: 30px;
   }
-  .Product-name.Product-name {
-    height: 50px;
-  }
-  .Product-size-item {
+  .Product-size-item_mobile {
     color: #c8c4c5;
     margin-right: 10px;
   }
-  .Product-text {
+  .Product-text_mobile {
     z-index: 100;
-    margin-right: 15px;
     text-align: left;
   }
-  .Product-item img {
+  .Product-item_mobile img {
     width: 100%;
     height: 100%;
   }
-  .Heading_sm {
-    font-weight: 400;
+  .Heading_sm_mobile {
+    font-weight: 500;
     margin: 0;
-    font-size: calc(18px + (20 - 18) * ((100vw - 300px) / (1600 - 300)));
+    font-size: calc(14px + (24 - 14) * ((100vw - 300px) / (1600 - 300)));
     color: #333333;
   }
-  @media only screen and (max-width: 600px) {
-    .Product-row {
-      justify-content: space-around;
-    }
-    .Product {
-      width: 100%;
-    }
-  
+  .Product-name_mobileProduct-name_mobile {
+    height: 30px;
   }
-  

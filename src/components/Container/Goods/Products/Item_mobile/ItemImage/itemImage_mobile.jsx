@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {StaticQuery, graphql} from 'gatsby';
 import Img from 'gatsby-image';
-import './itemImage.css';
+import './itemImage_mobile.css';
 
 const ItemImageComponent = ({children}) => (
-	<div className="Product-image">
+	<div className="Product-image_mobile">
 		{children}
 	</div>
 );

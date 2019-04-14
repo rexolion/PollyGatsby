@@ -5,7 +5,7 @@ import HeaderItems from './HeaderItems/headerItems';
 
 const Header = (props) => (
 	<header className="Header">
-		<HeaderItems inCart={props.inCart} cartModalOpened={props.cartModalOpened} searchHandler={props.searchHandler} searchValue={props.searchValue} siteTitle={props.siteTitle} cartCounter={props.cartCounter} />
+		<HeaderItems inCart={props.inCart} modalOpened={props.modalOpened} searchHandler={props.searchHandler} searchValue={props.searchValue} siteTitle={props.siteTitle} cartCounter={props.cartCounter} />
 	</header>
 );
 
@@ -14,7 +14,7 @@ Header.propTypes = {
 	cartCounter: PropTypes.number,
 	searchHandler: PropTypes.func,
 	searchValue: PropTypes.string,
-	cartModalOpened: PropTypes.func,
+	modalOpened: PropTypes.func,
 	inCart: PropTypes.array
 };
 

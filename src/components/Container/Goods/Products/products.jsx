@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import './products.css';
-import Item from './Item/item';
-import { StaticQuery, graphql} from 'gatsby';
 import PropTypes from 'prop-types';
+import { StaticQuery, graphql} from 'gatsby';
 import InfiniteScroll from 'react-infinite-scroller';
 
+import Item from './Item/item';
+import ItemMobile from './Item_mobile/item_mobile';
+import './products.css';
 
 class ProductsComponent extends Component {
 	constructor(props) {
@@ -20,7 +21,6 @@ class ProductsComponent extends Component {
 
 		};
 	}
-	
 	
 	componentDidMount() {
 		this.loadSorted();
@@ -75,7 +75,6 @@ class ProductsComponent extends Component {
 			this.setState({sortedArr: sorted, loadedArr: [], currentSort: sortType});
 		}
 	}
-	
 
 	loadMoreInfinite() {
 		this.state.sortedArr.splice(0,9).map(val => {
@@ -86,9 +85,11 @@ class ProductsComponent extends Component {
 	}
 
 	render() { 
-		let items = [];
+		const {cartCounter} = this.props;
+		const items = [];
 
-		this.state.loadedArr.map((val,ind) => items.push(<Item key={ind} cartCounter={this.props.cartCounter} product={val}/>));
+		this.state.loadedArr.map((val,ind) => items.push(isMobile() ? <ItemMobile key={ind} cartCounter={cartCounter} product={val}/> 
+			:<Item key={ind} cartCounter={cartCounter} product={val}/>));
 
 		return (  
 			<div className="Goods-products">
@@ -96,14 +97,10 @@ class ProductsComponent extends Component {
 					pageStart={0}
 					loadMore={this.loadMoreInfinite.bind(this)}
 					hasMore={this.state.hasMore}
-					className="Product"
-				>
-				
+					className="Product">
 					{items}
 				</InfiniteScroll>
 			</div>
-
-				
 		);
 	}
 }
@@ -114,8 +111,6 @@ ProductsComponent.propTypes = {
 	cartCounter: PropTypes.func,
 	searchValue: PropTypes.string,
 };
-
- 
 
 const Products = (props) => (
 	<StaticQuery 
@@ -147,4 +142,17 @@ Products.propTypes = {
 	cartCounter: PropTypes.func,
 	searchValue: PropTypes.string,
 };
+
+function isMobile() {
+	if (typeof window !== 'undefined') {
+		let mq = window.matchMedia('(max-width: 700px)');
+	
+		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && mq.matches) {
+			return true;
+		}
+		return false;
+	}
+
+}
+
 export default Products;

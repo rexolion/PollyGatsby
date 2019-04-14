@@ -2,7 +2,7 @@ import React from 'react';
 import Banner from './Banner/banner';
 import Products from './Products/products';
 import PropTypes from 'prop-types';
-import GoodsHeader from './GoodsHeader/goodsHeader';
+import GoodsHeading from './GoodsHeading/goodsHeading';
 import FiltersContainer from './FiltersContainer/filtersContainer';
 import './goods.css';
 
@@ -22,7 +22,7 @@ class Goods extends React.Component {
 		return (
 			<section className="Goods">
 				<Banner />
-				<GoodsHeader/>
+				<GoodsHeading/>
 				<FiltersContainer toogleList={this.toogleList} toogleSort={this.toogleSort} sort={this.state.sort} />
 				<Products searchValue={this.props.searchValue} cartCounter={this.props.cartCounter} sort={this.state.sort} />
 			</section>
