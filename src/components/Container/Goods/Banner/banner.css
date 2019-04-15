@@ -1,11 +1,31 @@
 .Banner {
-    background-color: #dddddd;
+    background-color: #222222;
     width: 90%;
+    position: relative;
+    overflow: hidden;
     height: 30vh;
     margin-top: 30px;
 }
+.Banner > * {
+    width: 100%;
+    opacity: 0.5;
+}
+
+.Banner-heading {
+    top: 50%;
+    height: 35%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 73%;
+    opacity: 1;
+    font-size: 32px;
+    color: #fff;
+    position: absolute;
+}
+
+
 @media only screen and (max-width: 800px) {
     .Banner{
-        display: none;
+        width: 95%;
     }
 }

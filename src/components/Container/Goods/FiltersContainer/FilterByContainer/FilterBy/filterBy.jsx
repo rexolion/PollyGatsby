@@ -4,7 +4,7 @@ import './filterBy.css';
 
 const FilterBy = ({ toogle, sort, toogleList }) => (
 	<div className={toogle ? 'Filter_by_pressed' : 'Filter_by'} onClick={toogleList} >
-		<span className="Filter-text">{sort}</span>
+		<span className="Filter-text">{sort.replace('_',' ')}</span>
 		<div className={toogle ? 'Arrow Arrow_right' : 'Arrow Arrow_down'}></div>
 	</div>
 

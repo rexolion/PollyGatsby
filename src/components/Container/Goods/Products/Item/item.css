@@ -88,6 +88,7 @@
     font-size: calc(18px + (20 - 18) * ((100vw - 300px) / (1600 - 300)));
     color: #333333;
   }
+  
   @media only screen and (max-width: 600px) {
     .Product-row {
       justify-content: space-around;

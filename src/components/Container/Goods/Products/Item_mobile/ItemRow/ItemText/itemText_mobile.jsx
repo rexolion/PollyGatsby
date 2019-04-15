@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ItemName from './ItemName/itemName_mobile';
+
 import ItemType from './ItemType/itemType_mobile';
-import './itemText_mobile.css';
+import ItemName from './ItemName/itemName_mobile';
 import ItemPrice from './ItemPrice_mobile/itemPrice_mobile';
+import './itemText_mobile.css';
 
 const ItemText = ({product}) => (
 	<div className="Product-text_mobile">
